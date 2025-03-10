@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Water Gun Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container" >
+        
+        <h1 style="font-size: 45px;">Snake Water Gun Game</h1>
+        <p style="font-size: 35px;">Best of 3 Rounds!</p>
+        <p id="player-name">Enter Your Name:
+            <input type="text" id="name-input" placeholder="Your Name">
+            <button onclick="startGame()">Start</button>
+        </p>
+
+        <div id="game-section" style="display: none;">
+            <h2 id="greeting"></h2>
+            <p>Select your move:</p>
+            <div class="buttons">
+                <button onclick="playGame('snake')">🐍 Snake</button>
+                <button onclick="playGame('water')">💧 Water</button>
+                <button onclick="playGame('gun')">🔫 Gun</button>
+            </div>
+            <p id="result"></p>
+            <p id="computer-choice"></p>
+            <p id="score">Score: <span id="player-score">0</span> - <span id="computer-score">0</span></p>
+            <p id="rounds-left">Rounds Left: <span id="round-count">3</span></p>
+            <button id="reset-btn" onclick="resetGame()">Restart Game</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
